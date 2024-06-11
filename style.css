@@ -1,0 +1,223 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poppins";
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: auto;
+    margin-left: 2.5%;
+}
+
+.logo span {
+    color: lightcoral;
+}
+
+.menu {
+    margin-left: auto;
+    margin-right: 2.5%;
+    width: 400px;
+    height: 40px;
+    background-color: rgb(240, 128, 128, 0.25);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 100px;
+}
+
+.menu label {
+    font-size: 14px;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.menu label:hover {
+    text-decoration: underline;
+}
+
+.home-input:checked ~ .home-label {
+    color: white;
+}
+
+.collection-input:checked ~ .collection-label {
+    color: white;
+}
+
+.brands-input:checked ~ .brands-label {
+    color: white;
+}
+
+.sale-input:checked ~ .sale-label {
+    color: white;
+}
+
+.cart-input:checked ~ .cart-label {
+    color: white;
+}
+
+.circle {
+    width: 75px;
+    height: 40px;
+    background-color: lightcoral;
+    border-radius: 100px;
+    position: absolute;
+    transition: 0.5s;
+    transform: translateX(-162px);
+}
+
+input {
+    display: none;
+}
+
+.produk-kami {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.daftar-produk {
+    margin: 5px auto;
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 300px;
+    grid-gap: 15px;
+}
+
+.produk {
+    background-color: rgb(240, 128, 128, 0.25);
+    border-radius: 20px;
+}
+
+.gambar {
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: lightcoral;
+    overflow: hidden;
+}
+
+.gambar img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.gambar img:hover {
+    transform: scale(1.1);
+}
+
+.detail {
+    position: absolute;
+    transform: translate(70px, -12.5px);
+    text-decoration: none;
+    color: white;
+    background-color: lightcoral;
+    border-radius: 100px;
+    padding: 5px 15px;
+}
+
+.detail:hover {
+    text-decoration: underline;
+}
+
+.nama, .harga-diskon, .harga {
+    text-align: center;
+    margin: 5px;
+}
+
+.nama {
+    margin-top: 25px;
+}
+
+.harga-diskon {
+    text-decoration: line-through;
+    color: lightslategray;
+}
+
+.harga {
+    font-size: 20px;
+}
+
+#modal {
+    width: 90%;
+    height: 90%;
+    border-radius: 20px;
+    background-color: white;
+    position: fixed;
+    z-index: 2;
+    margin: 25px 5%;
+    overflow: scroll;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.produk-modal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.gambar-modal-container {
+    width: 100%;
+}
+
+.gambar-modal {
+    width: 90%;
+    height: 300px;
+    object-fit: cover;
+    transition: 0.3s;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+#modal nav {
+    background-color: #ddd;
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.modal-title {
+    margin-right: auto;
+    margin-left: 15px;
+}
+
+.quantity-input {
+    display: inline;
+    width: 50px;
+    text-align: center;
+}
+
+.packaging input {
+    display: inline;
+}
+
+.close {
+    margin-left: auto;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 10px;
+    width: 100%;
+    height: 300px;
+    background-color: rgb(107, 55, 55);
+    color: white;
+}
+
+footer ul li:nth-child(1) {
+    color: lightcoral;
+}

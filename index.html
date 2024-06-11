@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shoes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d4b0adbd70.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');</style>
+</head>
+<body>
+
+<div id="global">  
+
+    <div id="modal" :style="{ display:modalDisplay }">
+        <nav>
+            <div class="modal-title">{{ namaModal }}</div>
+            <button @click="close" class="close"><i class="fa-solid fa-x"></i></button>
+        </nav>
+        <div class="produk-modal">
+            <div class="gambar-modal-container"><img class="gambar-modal" :src="imgModal" alt=""></div>
+            <div class="input-modal-container">
+                <h1>{{ namaModal }}</h1>
+                <div class="harga-diskon">{{ hargaDiskonModal }}</div>
+                <div class="harga">{{ hargaModal }}</div>
+                <!-- <div class="size">Choose size
+                    <select name="size" id="size">
+                        <option value="Pilih">Pilih</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                    </select>
+                </div> -->
+                <div class="quantity">Quantity
+                    <button @click="minusQty">-</button>
+                    <input v-model="qty" class="quantity-input" type="text">
+                    <button @click="plusQty">+</button>
+                </div>
+                <div class="packaging">
+                    <div>Packaging</div>
+                    <input @click="packagingFunction('normal')" type="radio" name="packaging" id="normal">
+                    <label for="normal">Normal</label>
+                    <input @click="packagingFunction('buble-wrap')" type="radio" name="packaging" id="buble-wrap">
+                    <label for="buble-wrap">Buble Wrap</label>
+                    <input @click="packagingFunction('kayu')" type="radio" name="packaging" id="kayu">
+                    <label for="kayu">Kayu</label>
+                </div>
+                <button @click="addToCartFunction">Add To Cart</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </div>
+    
+    <header>
+
+        <nav>
+            <h1 class="logo">Your <span>Shoes</span></h1>
+            <div class="menu">
+                <div id="circle" class="circle"></div>
+                
+                <input class="home-input" @click="menu('home')" id="home" name="menu" type="radio">
+                <label class="home-label" for="home">Home</label>
+
+                <input class="collection-input" @click="menu('collection')" id="collection" name="menu" type="radio">
+                <label class="collection-label" for="collection">Collection</label>
+
+                <input class="brands-input" @click="menu('brands')" id="brands" name="menu" type="radio">
+                <label class="brands-label" for="brands">Brands</label>
+
+                <input class="sale-input" @click="menu('sale')" id="sale" name="menu" type="radio">
+                <label class="sale-label" for="sale">Sale</label>
+
+                <input class="cart-input" @click="menu(cart)" id="cart" name="menu" type="radio">
+                <label class="cart-label" for="cart">Cart({{ cart.length }})</label>
+
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <h1 class="produk-kami">Produk Kami</h1>
+        <div class="daftar-produk">
+            <div v-for="product in products" class="produk">
+                <div class="gambar"><img :src="product.img" alt=""></div>
+                <button @click="detail(product.nama)" class="detail" :href="product.link">Detail</button>
+                <div class="nama">{{ product.nama }}</div>
+                <div class="harga-diskon">{{ product.hargaDiskon }}</div>
+                <div class="harga">{{ product.harga }}</div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+
+        <ul>
+            <li>Nazril Ramadhan</li>
+            <li>Nazril Ramadhan</li>
+            <li>Jl. Tri Sakti Pejarakan</li>
+            <li>085792962289</li>
+        </ul>
+
+    </footer>
+
+</div>  
+
+<script src="main.js"></script>
+
+</body>
+</html>
